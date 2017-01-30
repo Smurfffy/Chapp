@@ -30,3 +30,5 @@ wss.on('connection', function connection(ws) {
     // of the message and pass it to the broadcast() function.
     ws.on('message', wss.broadcast);
 });
+
+//....
