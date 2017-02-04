@@ -8,6 +8,15 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 
+  // Initialize Firebase
+  const config = {
+    apiKey: "AIzaSyAENoxk1x-mWX34f7QGUJfowHJxtadHZbQ",
+    authDomain: "chapp-chatapp.firebaseapp.com",
+    databaseURL: "https://chapp-chatapp.firebaseio.com",
+    storageBucket: "chapp-chatapp.appspot.com",
+    messagingSenderId: "214343474032"
+  };
+
 @NgModule({
   declarations: [
     MyApp,
@@ -18,7 +27,8 @@ import { LoginPage } from '../pages/login/login';
     LoginPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
