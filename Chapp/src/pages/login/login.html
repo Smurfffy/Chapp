@@ -14,19 +14,37 @@
 
 
 <ion-content padding>
+  <!--
+    Below is code for the form used in the login.html page that appears as soon as the app is opened
+    -->
   <form>
+    <!--
+      Label and input area for the users email
+    -->
     <ion-item>
       <ion-label color="primary" stacked>Email</ion-label>
       <ion-input type="text" name="email" [(ngModel)]="email" placeholder="email"></ion-input>
     </ion-item>
+    <!--
+      Label and input area for the users password
+    -->
     <ion-item>
       <ion-label color="primary" stacked>Password</ion-label>
       <ion-input type="password" name="password" [(ngModel)]="password" placeholder="password"></ion-input>
     </ion-item>
+    <!--
+      Button for login with Email and Password
+    -->
     <button ion-button round block (click)="login()" color="secondary" margin-top name="Login">Login</button>
+    <!--
+      Button for login with Twitter
+    -->
     <button ion-button icon-right round block (click)="twitterlogin()" color="twitter">Login with Twitter
       <ion-icon name="logo-twitter"></ion-icon>
     </button>
+    <!--
+      Button for login with Facebook
+    -->
     <button ion-button icon-right round block (click)="facebooklogin()" color="facebook">Login with Facebook
        <ion-icon name="logo-facebook"></ion-icon>
     </button>
