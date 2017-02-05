@@ -59,4 +59,21 @@ export class LoginPage {
     })
   }
 
+  facebooklogin(){
+    this.angfire.auth.login({
+      provider: AuthProviders.Facebook,
+      method: AuthMethods.Popup
+    }).then((response) => {
+      console.log('Login with Twitter Successful' + JSON.stringify(response));
+      let currentuser = {
+        email: response.auth.displayName,
+        picture: response.auth.photoURL
+      };
+      window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
+      this.navCtrl.pop();
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
 }
