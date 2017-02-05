@@ -21,6 +21,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  //Login function for users loging in with email and password
   login(){
     this.angfire.auth.login({
       email: this.email,
@@ -42,6 +43,7 @@ export class LoginPage {
     })
   }
 
+  // Login function for login with twitter
   twitterlogin(){
     this.angfire.auth.login({
       provider: AuthProviders.Twitter,
@@ -59,6 +61,7 @@ export class LoginPage {
     })
   }
 
+  //Login function for login with Facebook
   facebooklogin(){
     this.angfire.auth.login({
       provider: AuthProviders.Facebook,
