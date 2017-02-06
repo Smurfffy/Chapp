@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-// Pages
+// Pages for the app
 import { HomePage } from '../pages/home/home';
 import { EventIndexPage } from '../pages/event-index/event-index';
 import { EventInfoPage } from '../pages/event-info/event-info';
@@ -12,7 +12,7 @@ import { MakeEventPage } from '../pages/make-event/make-event';
 import { ProfilePage } from '../pages/profile/profile';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 
-//Providers
+//Providers for the app
 import { Event } from '../providers/event';
 import { Authentication } from '../providers/authentication';
 import { ProfileProv } from '../providers/profile-prov';
