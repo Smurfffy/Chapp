@@ -20,7 +20,14 @@ import { ProfileProv } from '../providers/profile-prov';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    EventIndexPage,
+    EventInfoPage,
+    ForgotPasswordPage,
+    LoginPage,
+    MakeEventPage,
+    ProfilePage,
+    SignUpPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -28,8 +35,20 @@ import { ProfileProv } from '../providers/profile-prov';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    EventIndexPage,
+    EventInfoPage,
+    ForgotPasswordPage,
+    LoginPage,
+    MakeEventPage,
+    ProfilePage,
+    SignUpPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Event,
+    Authentication,
+    ProfileProv
+  ]
 })
 export class AppModule {}
