@@ -95,6 +95,20 @@
   </main>
 </div>
     
+<!--Adds firebase to the applicaton by using credentials from the firebase console-->
+<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyARnFJf3a-0jBJTbKqk-AFuXt3Cz7JSw4w",
+    authDomain: "chappappfire.firebaseapp.com",
+    databaseURL: "https://chappappfire.firebaseio.com",
+    storageBucket: "chappappfire.appspot.com",
+    messagingSenderId: "596487748425"
+  };
+  firebase.initializeApp(config);
+</script>
+    
 <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -32,3 +32,25 @@ function Chapp() {
   
 }
 
+// Sets up shortcuts to Firebase features and initiate firebase authorization
+FriendlyChat.prototype.initFirebase = function() {
+  // Shortcuts to Firebase SDK features.
+  this.auth = firebase.auth();
+  this.database = firebase.database();
+  this.storage = firebase.storage();
+  // Initiates Firebase auth and listen to auth state changes.
+  this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+};
+
+// Sign in Method for the application using the firebase credentials.
+Chapp.prototype.signIn = function() {
+  // Sign in to Firebase using popup auth and Google as the identity provider(turn this on via firebase coonsole)
+  var provider = new firebase.auth.GoogleAuthProvider();
+  this.auth.signInWithPopup(provider);
+};
+
+// Signs-out method to log the user out of the application
+Chapp.prototype.signOut = function() {
+   // Sign out of Firebase.
+  this.auth.signOut();
+};
