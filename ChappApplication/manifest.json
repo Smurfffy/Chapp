@@ -1,0 +1,7 @@
+{
+  "name": "Chapp Application",
+  "short_name": "Chapp Application",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
