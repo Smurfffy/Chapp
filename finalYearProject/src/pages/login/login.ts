@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, AlertController } from 'ionic-angular';
+import { NavController, LoadingController, AlertController, NavParams } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Authentication } from '../../providers/authentication';
 import { HomePage } from '../home/home';
@@ -24,11 +24,19 @@ export class LoginPage {
   submitAttempt: boolean = false;
   public loading: any;
 
-  constructor(public navCtrl: NavController, public authData: Authentication, public formBuilder: FormBuilder, public alertCntrl: AlertController, public loadingCtrl: LoadingController) {
+  constructor(public nav: NavController, public authData: Authentication, public formBuilder: FormBuilder, public alertCntrl: AlertController, public loadingCtrl: LoadingController, public navParams: NavParams) {
     this.loginForm = formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
     });
+  }
+
+  goToResetPassword(){
+    this.nav.push(ForgotPasswordPage);
+  }
+
+  goToSignUpPage(){
+    this.nav.push(SignUpPage);
   }
 
   ionViewDidLoad() {
