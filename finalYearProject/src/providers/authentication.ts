@@ -19,4 +19,11 @@ export class Authentication {
       }
     });
   }
+
+  loginUser(newEmail: string, newPassword: string): any {
+    return this.af.auth.login({
+      email: newEmail,
+      password: newPassword
+    });
+  }
 }
