@@ -3,8 +3,8 @@ import { NavController, LoadingController, AlertController, NavParams } from 'io
 import { FormBuilder, Validators } from '@angular/forms';
 import { Authentication } from '../../providers/authentication';
 import { HomePage } from '../home/home';
-import { SignUpPage } from '../pages/sign-up/sign-up';
-import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
+import { SignUpPage } from '../../pages/sign-up/sign-up';
+import { ForgotPasswordPage } from '../../pages/forgot-password/forgot-password';
 import { EmailValidator } from '../../validators/email';
 
 /*
@@ -37,6 +37,14 @@ export class LoginPage {
 
   goToSignUpPage(){
     this.nav.push(SignUpPage);
+  }
+
+  elementChanged(input) {
+    let field = input.inputControl.name;
+    this[field + "Changed"] = true;
+  }
+
+  loginUsr() {
   }
 
   ionViewDidLoad() {
