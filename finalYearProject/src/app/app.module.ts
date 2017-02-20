@@ -17,6 +17,23 @@ import { Event } from '../providers/event';
 import { Authentication } from '../providers/authentication';
 import { ProfileProv } from '../providers/profile-prov';
 
+// AngularFire2
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+
+// AF2 Settings
+const firebaseConfig = {
+    apiKey: "AIzaSyDGHjJehgFMxF8d_23B49MTkNT2ItDLHRI",
+    authDomain: "finalyearproject-5c665.firebaseapp.com",
+    databaseURL: "https://finalyearproject-5c665.firebaseio.com",
+    storageBucket: "finalyearproject-5c665.appspot.com",
+    messagingSenderId: "720587302382"
+};
+
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password 
+}
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +47,8 @@ import { ProfileProv } from '../providers/profile-prov';
     SignUpPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
