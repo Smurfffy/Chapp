@@ -24,7 +24,12 @@ export class LoginPage {
   submitAttempt: boolean = false;
   public loading: any;
 
-  constructor(public navCtrl: NavController, public authData: Authentication, public formBuilder: FormBuilder, public alertCntrl: AlertController, public loadingCtrl: LoadingController) {}
+  constructor(public navCtrl: NavController, public authData: Authentication, public formBuilder: FormBuilder, public alertCntrl: AlertController, public loadingCtrl: LoadingController) {
+    this.loginForm = formBuilder.group({
+      email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
