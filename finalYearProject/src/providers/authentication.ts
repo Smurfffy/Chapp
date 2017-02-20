@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { AngularFire } from 'angularfire2';
+import firebase from 'firebase';
 
 /*
   Generated class for the Authentication provider.
@@ -10,9 +10,13 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class Authentication {
-
-  constructor(public http: Http) {
-    console.log('Hello Authentication Provider');
+  fireAuth: any;
+  constructor(public af: AngularFire) {
+    af.auth.subscribe( user => {
+      if (user) {
+        this.fireAuth = user.auth;
+        console.log(user);
+      }
+    });
   }
-
 }
