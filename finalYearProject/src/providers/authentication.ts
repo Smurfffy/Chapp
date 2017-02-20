@@ -34,4 +34,11 @@ export class Authentication {
   logoutUsr(): any {
     return this.af.auth.logout();
   }
+
+  createUsr(newEmail: string, newPassword: string): any {
+    return this.af.auth.createUser({
+      email: newEmail,
+      password: newPassword
+    });
+  }
 }
