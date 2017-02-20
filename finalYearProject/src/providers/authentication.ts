@@ -20,10 +20,18 @@ export class Authentication {
     });
   }
 
-  loginUser(newEmail: string, newPassword: string): any {
+  loginUsr(newEmail: string, newPassword: string): any {
     return this.af.auth.login({
       email: newEmail,
       password: newPassword
     });
+  }
+
+  forgotPassword(email: string): any {
+    return firebase.auth().sendPasswordResetEmail(email);
+  }
+
+  logoutUsr(): any {
+    return this.af.auth.logout();
   }
 }
