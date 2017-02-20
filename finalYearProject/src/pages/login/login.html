@@ -5,14 +5,33 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>Login</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <form [formGroup]="loginForm" (submit)="loginUsr()" novalidate>
 
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)" placeholder="Enter your email" [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"><p>Email not valid</p></ion-item>
+
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)" placeholder="Enter password" [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"><p>Password must be more than 6 characters</p></ion-item>
+
+    <button ion-button block type="submit">Login</button>
+
+  </form>
+
+  <button ion-button block clear (click)="goToForgetPassword()">Forgot Password?</button>
+
+  <button ion-button block clear (click)="createAccount()">Create a new account</button>
+  
 </ion-content>
