@@ -27,7 +27,7 @@ export class Authentication {
     });
   }
 
-  forgotPassword(email: string): any {
+  resetPassword(email: string): any {
     return firebase.auth().sendPasswordResetEmail(email);
   }
 
