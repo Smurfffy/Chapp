@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
+import { FormBuilder, Validators } from '@angular/forms'
+import { Authentication } from '../../providers/authentication';
+import { LoginPage } from '../pages/login/login';
+import { EmailValidator } from '../../validators/email';
 
 /*
   Generated class for the ForgotPassword page.
@@ -13,7 +17,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ForgotPasswordPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForgotPasswordPage');
