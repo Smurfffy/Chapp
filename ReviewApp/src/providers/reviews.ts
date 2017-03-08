@@ -11,8 +11,6 @@ export class Reviews {
     this.data = null;
   }
  
- //**  getReviews, createReview, and deleteReview corresponds to one of the end points on the API. */
- 
   getReviews(){
  
     if (this.data) {
