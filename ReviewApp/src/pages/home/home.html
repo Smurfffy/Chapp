@@ -17,9 +17,9 @@
  
       <ion-item>
  
-        <ion-avatar item-left>
-          <img src="https://api.adorable.io/avatars/75/{{review.title}}">
-        </ion-avatar>
+       <!-- <ion-avatar item-left>
+        <img src="https://api.adorable.io/avatars/75/{{review.title}}">
+        </ion-avatar>-->
  
         <h2>{{review.title}}</h2>
         <p>{{review.description}}</p>
@@ -30,6 +30,9 @@
  
       </ion-item>
  
+
+
+
       <ion-item-options>
         <button ion-button color="danger" (click)="deleteReview(review)">
           <ion-icon name="trash"></ion-icon>
@@ -39,5 +42,12 @@
     </ion-item-sliding>
  
   </ion-list>
+
+<!-- ionic tabs for map-->
+ <ion-tabs color="light">
+  <ion-tab [root]="tab1Root" tabTitle="Map" tabIcon="navigate"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="List" tabIcon="list"></ion-tab>
+</ion-tabs>
+  
  
 </ion-content>

@@ -1,15 +1,23 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AddReviewPage } from '../pages/add-review-page/add-review-page';
 import { Reviews } from '../providers/reviews';
+import { MapPage } from '../pages/map/map';
+import { ListPage } from '../pages/list/list';
+import { Locations } from '../providers/locations';
+import { GoogleMaps } from '../providers/google-maps';
+import { Connectivity } from '../providers/connectivity';
  
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    AddReviewPage
+    AddReviewPage,
+    MapPage,
+    ListPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -18,8 +26,10 @@ import { Reviews } from '../providers/reviews';
   entryComponents: [
     MyApp,
     HomePage,
-    AddReviewPage
+    AddReviewPage,
+    MapPage,
+    ListPage
   ],
-  providers: [Reviews]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews]
 })
 export class AppModule {}

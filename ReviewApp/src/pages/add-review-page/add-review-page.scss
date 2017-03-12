@@ -8,13 +8,17 @@ page-add-review-page {
     }
  
     ion-item {
-      background-color: #6495ED !important;
+      background-color: #6495ED !important;    
+    background-image: url('../back.png');
+
     }
  
     ion-input, ion-select, ion-textarea {
       background-color: #f2f2f2;
       padding: 5px 10px;
     }
+
+    
  
   }
  
