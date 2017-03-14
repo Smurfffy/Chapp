@@ -1,13 +1,13 @@
-<!--<ion-header>
+<ion-header>
  <ion-navbar transparent>
   <ion-title>
-   
+    Review
   </ion-title>
   <ion-buttons end>
-    <button ion-button icon-only (click)="addReview()"><ion-icon name="add"></ion-icon></button> 
+    <button ion-button icon-only (click)="addReview()"><ion-icon name="add"></ion-icon></button>
   </ion-buttons>
  </ion-navbar>
-</ion-header>-->
+</ion-header>
  
 <ion-content>
  
@@ -17,10 +17,11 @@
  
       <ion-item>
  
-       <!-- <ion-avatar item-left>
-        <img src="https://api.adorable.io/avatars/75/{{review.title}}">
-        </ion-avatar>-->
- 
+ <!--
+        <ion-avatar item-left>
+          <img src="https://api.adorable.io/avatars/75/{{review.title}}">
+        </ion-avatar>
+ -->
         <h2>{{review.title}}</h2>
         <p>{{review.description}}</p>
  
@@ -30,9 +31,6 @@
  
       </ion-item>
  
-
-
-
       <ion-item-options>
         <button ion-button color="danger" (click)="deleteReview(review)">
           <ion-icon name="trash"></ion-icon>
@@ -40,17 +38,7 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
-
-<!-- ionic tabs for map-->
-  <ion-tabs color="light">
-  <ion-tab [root]="tab1Root" tabTitle="Map" tabIcon="navigate"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="List" tabIcon="list"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="ReviewList" tabIcon="list"></ion-tab>
-
-</ion-tabs>
+ 
   </ion-list>
-
-
-  
  
 </ion-content>

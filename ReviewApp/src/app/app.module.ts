@@ -10,6 +10,7 @@ import { ListPage } from '../pages/list/list';
 import { Locations } from '../providers/locations';
 import { GoogleMaps } from '../providers/google-maps';
 import { Connectivity } from '../providers/connectivity';
+import { ReviewPage } from '../pages/review-list-page/review-list-page';
  
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Connectivity } from '../providers/connectivity';
     HomePage,
     AddReviewPage,
     MapPage,
-    ListPage
+    ListPage,
+    ReviewPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -28,7 +30,8 @@ import { Connectivity } from '../providers/connectivity';
     HomePage,
     AddReviewPage,
     MapPage,
-    ListPage
+    ListPage,
+    ReviewPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews]
 })

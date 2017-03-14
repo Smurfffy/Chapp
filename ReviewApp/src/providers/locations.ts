@@ -17,7 +17,7 @@ export class Locations {
       return Promise.resolve(this.data);
     }
     return new Promise(resolve =>{
-      this.http.get('assets/data/locations.json').map(res => res.json()).subscribe(data =>{
+      this.http.get('assets/locations.json').map(res => res.json()).subscribe(data =>{
         this.data = this.applyHaversine(data.locations);
         this.data.sort((locationA,locationB) => {
           return locationA.distance - locationB.distance;
@@ -32,6 +32,8 @@ export class Locations {
       lat: 40.713744, 
       lng: -74.009056
     };
+
+    
  
     locations.map((location) => {
  
