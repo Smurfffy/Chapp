@@ -7,9 +7,17 @@ var bodyParser = require('body-parser');    // pull information from HTML POST
 var methodOverride = require('method-override'); // simulate DELETE and PUT
 var cors = require('cors');
 
+var mongoClient = require("mongodb").MongoClient;
+mongoClient.connect("mongodb://fyp:hZKoGKQDOdtPw2jCTFgKmDIQKyEv7KNSH4SjRXZwidFDWoKTC47Z9MS3qv2RuzD0Ft0YgKzD6mf0LIIbKBvqhw==@fyp.documents.azure.com:10250/?ssl=true", function (err, db) {
+  db.close();
+});
+
 //====================================================================================================
 // Configuration
 mongoose.connect('mongodb://localhost/review-king');
+mongoose.connect('mongodb://fyp:hZKoGKQDOdtPw2jCTFgKmDIQKyEv7KNSH4SjRXZwidFDWoKTC47Z9MS3qv2RuzD0Ft0YgKzD6mf0LIIbKBvqhw==@fyp.documents.azure.com:10250/?ssl=true');
+
+
  
 app.use(morgan('dev'));                                         // log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
