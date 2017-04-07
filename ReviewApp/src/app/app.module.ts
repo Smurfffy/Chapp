@@ -12,6 +12,17 @@ import { GoogleMaps } from '../providers/google-maps';
 import { Connectivity } from '../providers/connectivity';
 import { ReviewPage } from '../pages/review-list-page/review-list-page';
  
+import { AngularFireModule } from 'angularfire2';
+import { LoginScreen } from '../pages/loginscreen/loginscreen';
+
+export const firebaseConfig = {
+  apiKey: '******',
+  authDomain: '******',
+  databaseURL: '******',
+  storageBucket: '******',
+  messagingSenderId: '******'
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -19,7 +30,8 @@ import { ReviewPage } from '../pages/review-list-page/review-list-page';
     AddReviewPage,
     MapPage,
     ListPage,
-    ReviewPage
+    ReviewPage,
+    LoginScreen
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -31,7 +43,8 @@ import { ReviewPage } from '../pages/review-list-page/review-list-page';
     AddReviewPage,
     MapPage,
     ListPage,
-    ReviewPage
+    ReviewPage,
+    LoginScreen
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews]
 })

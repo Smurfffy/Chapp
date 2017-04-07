@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic2Firebase
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+   
+ 
+<form [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
+    <ion-row>
+        <ion-item>
+            <ion-label for="email"></ion-label>
+            <ion-input type="email" value="" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-item>
+            <ion-label for="password"></ion-label>
+            <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        </ion-item>
+    </ion-row>
+      <ion-row>
+          <button (click)="login()" ion-button block>Log in</button>
+      </ion-row>
+  </form>
+ 
+ 
+</ion-content>
