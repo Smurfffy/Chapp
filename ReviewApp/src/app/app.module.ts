@@ -50,7 +50,8 @@ export const firebaseConfig = {
     MapPage,
     ListPage,
     ReviewPage,
-    LoginScreen
+    LoginScreen,
+    SignupPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider]
 })
