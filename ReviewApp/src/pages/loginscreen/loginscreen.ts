@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth-provider'; //added AuthProvider
-
+import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup' //Added sign up page
 @Component({
   selector: 'page-home',
@@ -40,6 +40,7 @@ export class LoginScreen {
             }
           });
         }
+         this.navCtrl.setRoot(HomePage);
     }
      logout(): void {
       this.auth.logout();
