@@ -16,6 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { LoginScreen } from '../pages/loginscreen/loginscreen';
 import { AuthProvider} from '../providers/auth-provider'  //Added AuthProvider
 import { SignupPage } from '../pages/signup/signup'; //Added signup page
+import { ResetPasswordPage } from '../pages/reset-password/reset-password'; //Added reset password page
 
 
 export const firebaseConfig = {
@@ -35,7 +36,8 @@ export const firebaseConfig = {
     MapPage,
     ListPage,
     ReviewPage,
-     SignupPage, //Added signup page
+     SignupPage,
+     ResetPasswordPage, //Added signup page
     LoginScreen
   ],
   imports: [
@@ -51,6 +53,7 @@ export const firebaseConfig = {
     ListPage,
     ReviewPage,
     LoginScreen,
+    ResetPasswordPage,
     SignupPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider]

@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth-provider'; //added AuthProvider
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup' //Added sign up page
+import { ResetPasswordPage } from '../reset-password/reset-password' //Added reset password page
 
 @Component({
   selector: 'page-home',
@@ -15,6 +16,7 @@ export class LoginScreen {
   password: AbstractControl;
   error: any;
   signupPage = SignupPage;  //Added sing up page
+  resetPasswordPage = ResetPasswordPage //Added reset password page
  
   constructor(public navCtrl: NavController, private fb: FormBuilder, public auth: AuthProvider) { //Added AuthProvider
     this.loginForm = this.fb.group({  

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-    Login
+      Ionic2Firebase
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -33,8 +33,12 @@
   <ion-row> 
       <button [navPush]="signupPage" ion-button block>Sign up</button>
   </ion-row>
+  <!--new link to sign up page-->
+  <ion-row> 
+      <button [navPush]="resetPasswordPage" ion-button block>Reset password</button>
+  </ion-row>
   <ion-row> 
       <button (click)="logout()" ion-button block>Log out</button>
   </ion-row>
-   
+ 
 </ion-content>
