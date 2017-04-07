@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth-provider'; //added AuthProvider
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup' //Added sign up page
+
 @Component({
   selector: 'page-home',
   templateUrl: 'loginscreen.html'
@@ -31,18 +32,23 @@ export class LoginScreen {
           //alert('Implement authentication');
           var credentials = ({email: this.email.value, password: this.password.value}); //Added next lines
           this.auth.loginWithEmail(credentials).subscribe(data => {
-            console.log(data);
+          console.log(data);
+           this.navCtrl.setRoot(HomePage);
             }, error=>{             //Added next lines for handling unknown users
             console.log(error);
             if (error.code == 'auth/user-not-found')
             {
               alert('User not found');
             }
+           // this.navCtrl.setRoot(HomePage);
           });
+        }else{
+         
         }
-         this.navCtrl.setRoot(HomePage);
     }
      logout(): void {
       this.auth.logout();
     }
+
+   
 }
