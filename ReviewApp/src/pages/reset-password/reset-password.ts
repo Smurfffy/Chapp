@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth-provider';
-import { HomePage } from '../home/home';
+import { LoginScreen } from '../loginscreen/loginscreen';
  
 @Component({
   selector: 'page-reset-password',
@@ -25,7 +25,7 @@ export class ResetPasswordPage {
     if(this.resetPasswordForm.valid) {
         this.auth.resetPassword(this.email.value).subscribe(registerData => {
             alert('Password recovery link is sent.');
-            this.navCtrl.setRoot(HomePage);
+            this.navCtrl.setRoot(LoginScreen);
         }, registerError => {
           console.log(registerError);
           if (registerError.code === 'auth/user-not-found')
@@ -34,5 +34,8 @@ export class ResetPasswordPage {
           }
       });
     }
+    
   }
+
+  
 }
