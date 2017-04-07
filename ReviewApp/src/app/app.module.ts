@@ -14,13 +14,17 @@ import { ReviewPage } from '../pages/review-list-page/review-list-page';
  
 import { AngularFireModule } from 'angularfire2';
 import { LoginScreen } from '../pages/loginscreen/loginscreen';
+import { AuthProvider} from '../providers/auth-provider'  //Added AuthProvider
+import { SignupPage } from '../pages/signup/signup'; //Added signup page
+
 
 export const firebaseConfig = {
-  apiKey: '******',
-  authDomain: '******',
-  databaseURL: '******',
-  storageBucket: '******',
-  messagingSenderId: '******'
+  apiKey: "AIzaSyACh3rPmwkZ0c--dT58K3_K85LHMZIwf0c",
+    authDomain: "ionic2loginpage.firebaseapp.com",
+    databaseURL: "https://ionic2loginpage.firebaseio.com",
+    projectId: "ionic2loginpage",
+    storageBucket: "ionic2loginpage.appspot.com",
+    messagingSenderId: "139153490469"
 };
 
 @NgModule({
@@ -31,10 +35,12 @@ export const firebaseConfig = {
     MapPage,
     ListPage,
     ReviewPage,
+     SignupPage, //Added signup page
     LoginScreen
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,6 +52,6 @@ export const firebaseConfig = {
     ReviewPage,
     LoginScreen
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider]
 })
 export class AppModule {}

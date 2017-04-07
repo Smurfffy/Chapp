@@ -8,6 +8,7 @@ import { MapPage } from '../map/map';
 import { ListPage } from '../list/list';
 import { ReviewPage } from '../review-list-page/review-list-page';
  
+
 @Component({
   selector: 'home-page',
   templateUrl: 'home.html'
