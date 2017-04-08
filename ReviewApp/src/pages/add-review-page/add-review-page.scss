@@ -1,26 +1,22 @@
+/*
+  This is the scss page for themming the add review page. it is written in sass.
+*/
 page-add-review-page {
-.ios, .md {
- 
-  add-review-page {
- 
-    ion-label {
-      margin-left: 10px;
+  .ios, .md {
+    add-review-page {
+      ion-label {
+        margin-left: 10px;
+      }
+  
+      ion-item {
+        background-color: #6495ED !important;    
+        background-image: url('../back.png');
+      }
+  
+      ion-input, ion-select, ion-textarea {
+        background-color: #f2f2f2;
+        padding: 5px 10px;
+      }
     }
- 
-    ion-item {
-      background-color: #6495ED !important;    
-    background-image: url('../back.png');
-
-    }
- 
-    ion-input, ion-select, ion-textarea {
-      background-color: #f2f2f2;
-      padding: 5px 10px;
-    }
-
-    
- 
   }
- 
-}
 }

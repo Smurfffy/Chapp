@@ -8,28 +8,30 @@
 </ion-header>
  
 <ion-content>
- 
   <ion-list no-lines>
  
+    <!--This is the title item in the review page where users can enter the title of thier review -->
     <ion-item>
-      <ion-label floating>Title</ion-label>
-      <ion-input [(ngModel)]="title" type="text"></ion-input>
+      <ion-label floating>Title</ion-label> <!-- The Title text on the page -->
+      <ion-input [(ngModel)]="title" type="text"></ion-input> <!--The text box where users input their desired title -->
     </ion-item>
  
+    <!-- This is the description item on the add review page where users can enter there desired discription to thier review -->
     <ion-item>
-      <ion-label floating>Comment</ion-label>
-      <ion-textarea [(ngModel)]="description"></ion-textarea>
+      <ion-label floating>Comment</ion-label> <!--The Comment text on the page -->
+      <ion-textarea [(ngModel)]="description"></ion-textarea> <!--The text box where users input thier desired description -->
     </ion-item>
  
+    <!--This is where the rating of the review item is given -->
     <ion-item>
-      <ion-range min="0" max="100" pin="true" [(ngModel)]="rating">
-        <ion-icon range-left name="sad"></ion-icon>
-        <ion-icon range-right name="happy"></ion-icon>
+      <ion-range min="0" max="100" pin="true" [(ngModel)]="rating"> <!--the slider for the review item -->
+        <ion-icon range-left name="sad"></ion-icon> <!--Sets the icon to sad if the slider is far to the left-->
+        <ion-icon range-right name="happy"></ion-icon><!--Sets the icon to happy if the slider is far right-->
       </ion-range>
     </ion-item>
  
   </ion-list>
  
-  <button ion-button full color="secondary" (click)="save()">Save</button>
+  <button ion-button full color="secondary" (click)="save()">Save</button><!--The button which calls the save function from our .ts file to save the review item -->
  
 </ion-content>
