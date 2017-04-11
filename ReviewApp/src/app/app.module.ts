@@ -23,6 +23,10 @@ import { AuthProvider} from '../providers/auth-provider'  // Our authentication 
 import { SignupPage } from '../pages/signup/signup'; // our signup page is imported here 
 import { ResetPasswordPage } from '../pages/reset-password/reset-password'; // Our reset password page is imported here.
 
+import { PlaceHomePage } from '../pages/place-home/place-home';
+import { NewPlacePage } from '../pages/new-place/new-place';
+import { PlacesService } from '../services/places.service';
+
 
 /*
   Below we configure our app to connect to our firebase server which has the database for user authenticaion.
@@ -49,7 +53,9 @@ export const firebaseConfig = {
     ReviewPage,
     SignupPage,
     ResetPasswordPage,
-    LoginScreen
+    LoginScreen,
+    PlaceHomePage,
+    NewPlacePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -65,8 +71,10 @@ export const firebaseConfig = {
     ReviewPage,
     LoginScreen,
     ResetPasswordPage,
-    SignupPage
+    SignupPage,
+    PlaceHomePage,
+    NewPlacePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider, PlacesService]
 })
 export class AppModule {}
