@@ -26,6 +26,7 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password'; // O
 import { PlaceHomePage } from '../pages/place-home/place-home';
 import { NewPlacePage } from '../pages/new-place/new-place';
 import { PlacesService } from '../services/places.service';
+import { Storage } from '@ionic/storage';
 
 
 /*
@@ -75,6 +76,6 @@ export const firebaseConfig = {
     PlaceHomePage,
     NewPlacePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider, PlacesService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider, PlacesService, Storage]
 })
 export class AppModule {}
