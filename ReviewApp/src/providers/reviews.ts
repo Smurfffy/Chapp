@@ -43,7 +43,7 @@ export class Reviews {
  
   deleteReview(id){
  
-    this.http.delete('https://fathomless-chamber-74986.herokuapp.com/api/reviews' + id).subscribe((res) => {
+    this.http.delete('https://fathomless-chamber-74986.herokuapp.com/api/reviews/' + id).subscribe((res) => {
       console.log(res.json());
     });    
  

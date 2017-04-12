@@ -10,6 +10,15 @@ import { Reviews } from '../../providers/reviews';
 export class ReviewPage {
  
   reviews: any;
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
  
   constructor(public nav: NavController, public reviewService: Reviews, public modalCtrl: ModalController) {
  
