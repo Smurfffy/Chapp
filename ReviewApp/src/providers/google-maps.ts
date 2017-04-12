@@ -109,7 +109,7 @@ export class GoogleMaps {
           let distanceToYou = this.getDistanceBetweenPoints(
             event.latLng,
             position,
-            'miles'
+            'km'
           ).toFixed(2);
           this.geocodeLatLng(event.latLng,geocoder,infowindow,distanceToYou);
         });
@@ -191,7 +191,7 @@ export class GoogleMaps {
             map: this.map
           });
           this.markers.push(marker);
-          infowindow.setContent(results[1].formatted_address+'<p style="color: red;">'+distanceToYou+" miles from your location</p>");
+          infowindow.setContent(results[1].formatted_address+'<p style="color: red;">'+distanceToYou+" km from your location</p>");
           infowindow.open(this.map, marker);
         } else {
           window.alert('No results found');
@@ -220,7 +220,7 @@ export class GoogleMaps {
       km: 6371
     };
 
-    let R = earthRadius[units || 'miles'];
+    let R = earthRadius[units || 'km'];
     let lat1 = start.lat();
     let lon1 = start.lng();
     let lat2 = end.coords.latitude;

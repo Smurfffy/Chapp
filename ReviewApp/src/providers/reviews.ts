@@ -19,7 +19,7 @@ export class Reviews {
  
     return new Promise(resolve => {
  
-      this.http.get('http://localhost:8080/api/reviews')
+      this.http.get('https://fathomless-chamber-74986.herokuapp.com/api/reviews')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -34,7 +34,7 @@ export class Reviews {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
  
-    this.http.post('http://localhost:8080/api/reviews', JSON.stringify(review), {headers: headers})
+    this.http.post('https://fathomless-chamber-74986.herokuapp.com/api/reviews', JSON.stringify(review), {headers: headers})
       .subscribe(res => {
         console.log(res.json());
       });
@@ -43,7 +43,7 @@ export class Reviews {
  
   deleteReview(id){
  
-    this.http.delete('http://localhost:8080/api/reviews/' + id).subscribe((res) => {
+    this.http.delete('https://fathomless-chamber-74986.herokuapp.com/api/reviews' + id).subscribe((res) => {
       console.log(res.json());
     });    
  
