@@ -9,7 +9,8 @@ import { Reviews } from '../../providers/reviews'; // Imports the provider
 import { MapPage } from '../map/map'; // imports the review page to be opened from a tab
 import { ListPage } from '../list/list'; // imports the list page to be opened from a tab
 import { ReviewPage } from '../review-list-page/review-list-page'; // imports the review page to be opened from a tab
- 
+import { PlaceHomePage } from '../place-home/place-home';
+
 
 @Component({
   selector: 'home-page',
@@ -18,8 +19,9 @@ import { ReviewPage } from '../review-list-page/review-list-page'; // imports th
 export class HomePage {
 
   tab1Root: any = MapPage; // sets the map page to be in tab1
-  tab2Root: any = ListPage; // sets the list page to be in tab 2
-  tab3Root: any = ReviewPage; // sets the review page to be in tab 3
+   tab2Root: any = PlaceHomePage;
+  tab3Root: any = ListPage; // sets the list page to be in tab 2
+  tab4Root: any = ReviewPage; // sets the review page to be in tab 3
   reviews: any; // review variable for creating and deleting reviews
  
   constructor(public nav: NavController, public reviewService: Reviews, public modalCtrl: ModalController) {

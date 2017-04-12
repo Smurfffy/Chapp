@@ -23,6 +23,13 @@ import { AuthProvider} from '../providers/auth-provider'  // Our authentication 
 import { SignupPage } from '../pages/signup/signup'; // our signup page is imported here 
 import { ResetPasswordPage } from '../pages/reset-password/reset-password'; // Our reset password page is imported here.
 
+import { PlaceHomePage } from '../pages/place-home/place-home';
+import { NewPlacePage } from '../pages/new-place/new-place';
+import { PlacesService } from '../services/places.service';
+import { Storage } from '@ionic/storage';
+import { PlacePage } from '../pages/place/place';
+import { AgmCoreModule } from 'angular2-google-maps/core';//angular 2 google maps import
+
 
 /*
   Below we configure our app to connect to our firebase server which has the database for user authenticaion.
@@ -49,11 +56,17 @@ export const firebaseConfig = {
     ReviewPage,
     SignupPage,
     ResetPasswordPage,
-    LoginScreen
+    LoginScreen,
+    PlaceHomePage,
+    NewPlacePage,
+    PlacePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+       AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBqrAtx7EDgmjfQkH4zO55i9t-yr6fPQFI'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,8 +78,11 @@ export const firebaseConfig = {
     ReviewPage,
     LoginScreen,
     ResetPasswordPage,
-    SignupPage
+    SignupPage,
+    PlaceHomePage,
+    NewPlacePage,
+    PlacePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider, PlacesService, Storage]
 })
 export class AppModule {}
