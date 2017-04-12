@@ -1,0 +1,30 @@
+{
+    "locations": [
+ 
+
+         {
+            "title": "Eyre Square",
+            "latitude": 53.2747,
+            "longitude": -9.0487
+        },
+        {
+            "title": "Galway City Museum, Spanish Arch",
+            "latitude": 53.2698374066737,
+            "longitude": -9.05397160591612
+        },
+        {
+            "title": "Leisureland, Salthill",
+            "latitude": 53.2588618130494,
+            "longitude": -9.08363882073206
+        },
+        {
+            "title": "Town Hall Theatre, Courthouse Square",
+            "latitude": 53.2761057477469,
+            "longitude": -9.05412896744102
+        }
+        
+
+        
+        
+    ]
+}
