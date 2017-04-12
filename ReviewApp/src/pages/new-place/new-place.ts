@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from "ionic-angular";
-import { Geolocation } from 'ionic-native'; //add for cordova but rapped by ionic so it can be used.
+import { Geolocation } from 'ionic-native';
 
 import { PlacesService } from "../../services/places.service";
 
@@ -9,8 +9,8 @@ import { PlacesService } from "../../services/places.service";
   templateUrl: 'new-place.html'
 })
 export class NewPlacePage {
- // location: {lat: number, lng: number} = {lat: 0, lng: 0};
- location: any;
+  location: {lat: number, lng: number} = {lat: 0, lng: 0};
+  //location: any;
 
   constructor(private placesService: PlacesService, private navCtrl: NavController) {}
 
@@ -20,13 +20,12 @@ export class NewPlacePage {
   }
 
   onLocateUser() {
-    Geolocation.getCurrentPosition() //returns a promise to listen if its successfull or not
+    Geolocation.getCurrentPosition()
       .then(
         (location) => {
-          console.log('Location fetched successfully');//check to see if location has worked
-         //this.location.lat = location.coords.latitude;
-          //this.location.lng = location.coords.longitude;
-          this.location = location;
+          console.log('Location fetched successfully');
+          this.location.lat = location.coords.latitude;
+          this.location.lng = location.coords.longitude;
         }
       )
       .catch(

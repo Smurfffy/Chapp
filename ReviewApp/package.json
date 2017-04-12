@@ -22,6 +22,7 @@
     "@ionic-native/geolocation": "^3.4.4",
     "@ionic/storage": "1.1.7",
     "@types/cordova-plugin-network-information": "0.0.3",
+    "angular2-google-maps": "^0.17.0",
     "angularfire2": "^2.0.0-beta.6",
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",

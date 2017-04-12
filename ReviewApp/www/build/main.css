@@ -24462,6 +24462,10 @@ page-map #map {
   height: 100%;
 }
 
+page-place sebm-google-map {
+  height: 300px;
+}
+
 page-review-list-page .ios home-page ion-item, page-review-list-page .md home-page ion-item {
   background-color: #fff;
   border-bottom: none !important;

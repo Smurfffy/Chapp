@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-navbar>
@@ -14,19 +13,13 @@
       <ion-label>Title</ion-label>
       <ion-input type="text" name="title" ngModel required></ion-input>
     </ion-item>
-
-</form>
-
-    <ion-grid>
+    <button ion-button block type="submit" [disabled]="!f.valid">Add Place</button>
+  </form>
+  <ion-grid>
     <ion-row>
       <ion-col><button ion-button block (click)="onLocateUser()">Locate me</button></ion-col>
     </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <p>Your Location {{ location?.coords.latitude }} </p>
-      </ion-col>
-    </ion-row>
   </ion-grid>
-  
+
+
 </ion-content>

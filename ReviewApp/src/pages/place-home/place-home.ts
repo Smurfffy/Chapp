@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { ModalController, NavController } from 'ionic-angular';
 import { NewPlacePage } from "../new-place/new-place";
 import { PlacesService } from "../../services/places.service";
-//import { PlacePage } from '../place-hom/place';
+import { PlacePage } from '../place/place';
 import { Place } from '../../model/place.model';
 /*
   Generated class for the PlaceHome page.
@@ -38,7 +38,7 @@ export class PlaceHomePage {
   }
 
   onOpenPlace(place: Place) {
-    //this.modalCtrl.create(PlacePage, place).present();
+    this.modalCtrl.create(PlacePage, place).present();//triggers a moudle to display the map
   }
 
 }

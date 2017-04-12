@@ -27,6 +27,8 @@ import { PlaceHomePage } from '../pages/place-home/place-home';
 import { NewPlacePage } from '../pages/new-place/new-place';
 import { PlacesService } from '../services/places.service';
 import { Storage } from '@ionic/storage';
+import { PlacePage } from '../pages/place/place';
+import { AgmCoreModule } from 'angular2-google-maps/core';//angular 2 google maps import
 
 
 /*
@@ -56,11 +58,15 @@ export const firebaseConfig = {
     ResetPasswordPage,
     LoginScreen,
     PlaceHomePage,
-    NewPlacePage
+    NewPlacePage,
+    PlacePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+       AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBqrAtx7EDgmjfQkH4zO55i9t-yr6fPQFI'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -74,7 +80,8 @@ export const firebaseConfig = {
     ResetPasswordPage,
     SignupPage,
     PlaceHomePage,
-    NewPlacePage
+    NewPlacePage,
+    PlacePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider, PlacesService, Storage]
 })
