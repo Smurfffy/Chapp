@@ -7,7 +7,7 @@ import { NavParams, ViewController } from 'ionic-angular';
 })
 export class PlacePage {
 
-   lat: number;
+  lat: number;
   lng: number;
   // creates map to be displayed on the page
  constructor(private viewCtrl: ViewController, private navParams: NavParams) {

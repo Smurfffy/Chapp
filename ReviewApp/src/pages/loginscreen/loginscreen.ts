@@ -34,24 +34,24 @@ export class LoginScreen {
   if not successful and error message is shown
  */
   login(): void { 
-        if(this.loginForm.valid) {
-          //console.log(this.email.value, this.password.value);
-          //alert('Implement authentication');
-          var credentials = ({email: this.email.value, password: this.password.value}); //Added next lines
-          this.auth.loginWithEmail(credentials).subscribe(data => {
-          console.log(data);
-           this.navCtrl.setRoot(HomePage);
-            }, error=>{             
-            console.log(error);
-            if (error.code == 'auth/user-not-found')
-            {
-              alert('User not found'); // The error message that will be show to the users.
-            }
-           // this.navCtrl.setRoot(HomePage);
-          });
-        }else{
-         
-        }
+      if(this.loginForm.valid) {
+        //console.log(this.email.value, this.password.value);
+        //alert('Implement authentication');
+        var credentials = ({email: this.email.value, password: this.password.value}); //Added next lines
+        this.auth.loginWithEmail(credentials).subscribe(data => {
+        console.log(data);
+          this.navCtrl.setRoot(HomePage);
+          }, error=>{             
+          console.log(error);
+          if (error.code == 'auth/user-not-found')
+          {
+            alert('User not found'); // The error message that will be show to the users.
+          }
+          // this.navCtrl.setRoot(HomePage);
+        });
+      }else{
+        
+      }
     }
 
     /*
@@ -60,6 +60,4 @@ export class LoginScreen {
      logout(): void {
       this.auth.logout();
     }
-
-   
 }

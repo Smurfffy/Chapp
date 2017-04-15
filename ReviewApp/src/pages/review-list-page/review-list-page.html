@@ -1,7 +1,7 @@
 <ion-header>
- <ion-navbar transparent>
+ <ion-navbar color="secondary">
   <ion-title>
-    Review
+    Reviews
   </ion-title>
   <ion-buttons end>
     <!--Button for adding reviews -->
@@ -11,32 +11,24 @@
 </ion-header>
  
 <ion-content>
-
+  <!-- Here is my attempt at refreshing the list
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
- 
+  -->
   <ion-list no-lines>
- <!--Item can be swiped to reveal delete button -->
- <!--Loop for displaying reviews -->
+    <!--Item can be swiped to reveal delete button -->
+    <!--Loop for displaying reviews -->
     <ion-item-sliding *ngFor="let review of reviews">
- <!--The review item displaying the title, description and the rating. -->
+    <!--The review item displaying the title, description and the rating. -->
       <ion-item>
- 
- <!--
-        <ion-avatar item-left>
-          <img src="https://api.adorable.io/avatars/75/{{review.title}}">
-        </ion-avatar>
- -->
         <h2>{{review.title}}</h2>
         <p>{{review.description}}</p>
- 
         <ion-icon *ngIf="review.rating < 50" danger name="sad"></ion-icon>
         <ion-icon *ngIf="review.rating >= 50" secondary name="happy"></ion-icon> 
         {{review.rating}}
- 
       </ion-item>
- <!--Only option here is our delete option -->
+      <!--Only option here is our delete option -->
       <ion-item-options>
         <button ion-button color="danger" (click)="deleteReview(review)"> <!--the delete button for deleting the review from the app and the database-->
           <ion-icon name="trash"></ion-icon>
@@ -44,7 +36,5 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
- 
   </ion-list>
- 
 </ion-content>

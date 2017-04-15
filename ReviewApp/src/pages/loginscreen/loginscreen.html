@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-navbar color="custom">
+  <ion-navbar color="secondary">
     <ion-title>
-      Review
+      Go Locate
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -35,11 +35,11 @@
   </ion-row>
   <ion-row> 
       <!--Sign up button navigates to the user sign up form. -->
-      <button round [navPush]="signupPage" ion-button block color="secondary">Sign up</button>
+      <button round [navPush]="signupPage" ion-button block color="primary">Sign up</button>
   </ion-row>
   <ion-row> 
       <!--Logout function logs out current user -->
-      <button round (click)="logout()" ion-button block color="secondary">Log out</button>
+      <button round (click)="logout()" ion-button block color="dark">Log out</button>
   </ion-row>
   <ion-row> 
        <!--Reset password function navigates the user to the reset password page -->

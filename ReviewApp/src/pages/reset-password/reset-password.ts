@@ -17,14 +17,14 @@ export class ResetPasswordPage {
     // validets the email address
     this.resetPasswordForm = this.fb.group({  
           'email': ['', Validators.compose([Validators.required, Validators.pattern(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)])]
-      });
-  
-      this.email = this.resetPasswordForm.controls['email'];     
+    });
+    this.email = this.resetPasswordForm.controls['email'];     
   }
- //If the email is regesters a reset password link will be sent to them by email. if not and error message is shown.
+
+  //If the email is regesters a reset password link will be sent to them by email. if not and error message is shown.
   submit(): void { 
     if(this.resetPasswordForm.valid) {
-      //value checked, if true email is sent and user is returned to login screen
+       //value checked, if true email is sent and user is returned to login screen
         this.auth.resetPassword(this.email.value).subscribe(registerData => {
             alert('Password recovery link is sent.');
             this.navCtrl.setRoot(LoginScreen);
@@ -35,9 +35,6 @@ export class ResetPasswordPage {
             alert(registerError.message);
           }
       });
-    }
-    
-  }
-
-  
+    } 
+  } 
 }

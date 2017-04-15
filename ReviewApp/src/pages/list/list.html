@@ -1,15 +1,11 @@
 <ion-header>
- 
   <ion-navbar color="secondary">
-    <ion-title>List</ion-title>
+    <ion-title>Landmarks</ion-title>
   </ion-navbar>
- 
 </ion-header>
  
- 
 <ion-content>
- 
-    <ion-list no-lines>
+    <ion-list>
         <!--loop for displaying saved locations in a list on the screen -->
         <ion-item *ngFor="let location of locations.data">
             <ion-avatar item-left>
@@ -19,5 +15,4 @@
             <p>{{location.distance}} miles</p>
         </ion-item>
     </ion-list>
- 
 </ion-content>

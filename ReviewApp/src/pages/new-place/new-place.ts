@@ -24,6 +24,7 @@ export class NewPlacePage {
       .then(
         (location) => {
           console.log('Location fetched successfully'); // tells the user the location has be saved.
+          alert('Location Ready');
           this.location.lat = location.coords.latitude;
           this.location.lng = location.coords.longitude;
         }
@@ -32,5 +33,4 @@ export class NewPlacePage {
         (error) => console.log('An error occurred')
       );
   }
-
 }

@@ -1,16 +1,13 @@
-
-
 <ion-header>
   <ion-navbar color="secondary">
     <ion-title>
       Nearby
        <ion-row> 
-         <!--Logout button so the user can logout fromm the app -->
-      <button (click)="logout()" ion-button block>Log out</button>
-  </ion-row>
+          <!--Logout button so the user can logout fromm the app -->
+          <button (click)="logout()" ion-button block>Log out</button>
+       </ion-row>
     </ion-title>
   </ion-navbar>
- 
 </ion-header>
  
 <ion-content>
@@ -18,7 +15,5 @@
   <div #pleaseConnect id="please-connect">
     <p>Please connect to the Internet...</p>
   </div>
- 
   <div #map id="map"></div>
- 
 </ion-content>

@@ -23,18 +23,18 @@ export class MapPage {
     ionViewDidLoad(){
  
         this.platform.ready().then(() => {
- 
+
             let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
             let locationsLoaded = this.locations.load(); //Locations for our markers
- 
+
             Promise.all([
                 mapLoaded,
                 locationsLoaded
             ]).then((result) => {
- 
+
                 let locations = result[1];
- 
-                // dsplays our marks on the map.
+
+                // displays our marks on the map.
                 for(let location of locations){
                     this.maps.addMarker(location.latitude, location.longitude);
                 }
