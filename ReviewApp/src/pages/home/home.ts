@@ -9,7 +9,7 @@ import { Reviews } from '../../providers/reviews'; // Imports the provider
 import { MapPage } from '../map/map'; // imports the review page to be opened from a tab
 import { ListPage } from '../list/list'; // imports the list page to be opened from a tab
 import { ReviewPage } from '../review-list-page/review-list-page'; // imports the review page to be opened from a tab
-import { PlaceHomePage } from '../place-home/place-home';
+import { PlaceHomePage } from '../place-home/place-home'; //imports the places page to be navigated to
 
 
 @Component({
@@ -19,7 +19,7 @@ import { PlaceHomePage } from '../place-home/place-home';
 export class HomePage {
 
   tab1Root: any = MapPage; // sets the map page to be in tab1
-   tab2Root: any = PlaceHomePage;
+  tab2Root: any = PlaceHomePage; // sets the saved places page to be in tab 2
   tab3Root: any = ListPage; // sets the list page to be in tab 2
   tab4Root: any = ReviewPage; // sets the review page to be in tab 3
   reviews: any; // review variable for creating and deleting reviews
@@ -36,10 +36,12 @@ export class HomePage {
     });
   }
  
+ /*
+  Function for adding reviews to the app, from the app.
+ */
   addReview(){
- 
     let modal = this.modalCtrl.create(AddReviewPage); // opens a modal with the add review page
- 
+    //Once the modal is dismissed the review is pushed to the database.
     modal.onDidDismiss(review => {
       if(review){
         this.reviews.push(review);
@@ -50,7 +52,6 @@ export class HomePage {
   }
  
   deleteReview(review){
- 
     //Remove the review locally
       let index = this.reviews.indexOf(review);
  

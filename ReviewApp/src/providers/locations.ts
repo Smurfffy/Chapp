@@ -11,7 +11,7 @@ export class Locations {
   constructor(public http: Http) {
     console.log('Hello Locations Provider');
   }
-
+  
   load(){
     if(this.data){
       return Promise.resolve(this.data);

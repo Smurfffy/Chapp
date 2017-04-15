@@ -8,15 +8,19 @@
 
 
 <ion-content padding>
+  <!--Our form for entering the name of the place, getting the location and saving it to the device. -->
   <form (ngSubmit)="onAddPlace(f.value)" #f="ngForm">
+    <!--Text box item for entering the desierd name of the location -->
     <ion-item>
       <ion-label>Title</ion-label>
       <ion-input type="text" name="title" ngModel required></ion-input>
     </ion-item>
+    <!--Button for saving the location. disabled if no text entered -->
     <button ion-button block type="submit" [disabled]="!f.valid">Add Place</button>
   </form>
   <ion-grid>
     <ion-row>
+      <!--Gets the location and saves it-->
       <ion-col><button ion-button block (click)="onLocateUser()">Locate me</button></ion-col>
     </ion-row>
   </ion-grid>

@@ -9,8 +9,10 @@
 
 
 <ion-content padding>
+  <!--Gets the lat and long and displays that location on a map. -->
   <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="16">
 
   </sebm-google-map>
+  <!--button for clossing the location page. -->
   <button ion-button block (click)="onDismiss()">Dismiss</button>
 </ion-content>

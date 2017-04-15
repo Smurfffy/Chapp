@@ -4,6 +4,7 @@ import { Platform } from 'ionic-angular';
  
 declare var Connection;
  
+ //This class doesnt surve much of a purpose anymore because of an installed cordova plugin.
 @Injectable()
 export class Connectivity {
  
@@ -13,6 +14,7 @@ export class Connectivity {
     this.onDevice = this.platform.is('cordova');
   }
  
+ //Checks if the device is onliine.
   isOnline(): boolean {
     if(this.onDevice && Network.type){
       return Network.type !== Connection.NONE;
@@ -21,6 +23,7 @@ export class Connectivity {
     }
   }
  
+ //Checks if the device is offline.
   isOffline(): boolean {
     if(this.onDevice && Network.type){
       return Network.type === Connection.NONE;

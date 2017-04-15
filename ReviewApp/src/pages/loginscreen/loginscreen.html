@@ -12,15 +12,17 @@
             <div *ngIf="auth.authState">current user is {{auth.currentUser}}</div>
         </ion-item>
     </ion-row>
-     
+     <!--Our login form containg areas for users to enter their email and password to sign into the app -->
   <form [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
     <ion-row>
+        <!--The email text box items-->
         <ion-item>
             <ion-label stacked>Email</ion-label>
             <ion-input type="email" value="" placeholder="Enter your email" formControlName="email"></ion-input>
         </ion-item>
     </ion-row>
     <ion-row>
+        <!--The pasword text box items -->
         <ion-item>
             <ion-label stacked>Password</ion-label>
             <ion-input type="password" placeholder="Enter your password" formControlName="password"></ion-input>
@@ -28,16 +30,19 @@
     </ion-row>
   </form>
   <ion-row>
+      <!--On click, firebase checkd values and if correct logs in the user, if incorrect access is denied -->
       <button round (click)="login()" ion-button block color="secondary">Log in</button>
   </ion-row>
   <ion-row> 
+      <!--Sign up button navigates to the user sign up form. -->
       <button round [navPush]="signupPage" ion-button block color="secondary">Sign up</button>
   </ion-row>
-  <!--new link to sign up page-->
   <ion-row> 
+      <!--Logout function logs out current user -->
       <button round (click)="logout()" ion-button block color="secondary">Log out</button>
   </ion-row>
   <ion-row> 
+       <!--Reset password function navigates the user to the reset password page -->
       <button round [navPush]="resetPasswordPage" ion-button block clear color="danger">Reset password</button>
   </ion-row>
  

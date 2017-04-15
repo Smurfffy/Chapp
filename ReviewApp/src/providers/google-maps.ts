@@ -19,7 +19,7 @@ export class GoogleMaps {
   constructor(public connectivityService: Connectivity) {
 
   }
-
+//Map is initilazed here
   init(mapElement: any, pleaseConnect: any): Promise<any> {
 
     this.mapElement = mapElement;
@@ -38,7 +38,7 @@ export class GoogleMaps {
         console.log("Google maps JavaScript needs to be loaded.");
 
         this.disableMap();
-
+        //If the user in online the map is displayed
         if(this.connectivityService.isOnline()){
 
           window['mapInit'] = () => {
@@ -91,8 +91,6 @@ export class GoogleMaps {
 
         // UNCOMMENT FOR NORMAL USE
         let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-        //let latLng = new google.maps.LatLng(40.713744, -74.009056);
 
         let mapOptions = {
           center: latLng,
@@ -167,6 +165,9 @@ export class GoogleMaps {
     }, false);
 
   }
+  /*
+  This is our function for adding markers to the map
+  */
   addMarker(lat: number, lng: number): void {
 
     let latLng = new google.maps.LatLng(lat, lng);
@@ -180,7 +181,7 @@ export class GoogleMaps {
     this.markers.push(marker);  
 
   }
-  // Transfer latLng to specified Address 
+  // Transfer latLng to specified Address and display it on the map
   geocodeLatLng(latLng: any,geocoder: any, infowindow:any,distanceToYou: any): void{
     geocoder.geocode({'location': latLng}, (results, status) => {
       if (status === 'OK') {

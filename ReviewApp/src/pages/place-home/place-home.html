@@ -1,6 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons end>
+      <!--a button for loading the add place page. -->
       <button ion-button icon-only (click)="onLoadNewPlace()">
         <ion-icon name="add"></ion-icon>
       </button>
@@ -13,6 +14,7 @@
 
 <ion-content padding>
   <ion-list>
+    <!--A loop for displaying the list of saved places. -->
     <ion-item
       *ngFor="let place of places"
       (click)="onOpenPlace(place)">{{ place.title }}</ion-item>

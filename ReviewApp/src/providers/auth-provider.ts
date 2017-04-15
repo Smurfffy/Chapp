@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter, Inject } from '@angular/core';
-import { AuthProviders, AngularFire, FirebaseAuthState, AuthMethods, FirebaseApp } from 'angularfire2'; //Add FirebaseApp
+import { AuthProviders, AngularFire, FirebaseAuthState, AuthMethods, FirebaseApp } from 'angularfire2'; //Importing Firebase
 import { Observable } from "rxjs/Observable";
  
 @Injectable()
@@ -16,6 +16,9 @@ export class AuthProvider {
     });
   }
    
+  /*
+  Our function for logging in with email and password. The credentails are compared to the database.
+  */
   loginWithEmail(credentials) {
     return Observable.create(observer => {
       this.af.auth.login(credentials, {
@@ -30,6 +33,9 @@ export class AuthProvider {
     });
   }
  
+ /*
+ Our funciton for regestering a user to the database. The credentails are saved to the database.
+ */
   registerUser(credentials: any) {
     return Observable.create(observer => {
       this.af.auth.createUser(credentials).then(authData => {
@@ -42,6 +48,9 @@ export class AuthProvider {
     });
   }
    
+   /*
+   Our function for reseting a users password. the email are verifyed and an email is sent.
+   */
   resetPassword(emailAddress:string){
     return Observable.create(observer => {
       this.firebase.auth().sendPasswordResetEmail(emailAddress).then(function(success) {
@@ -54,10 +63,12 @@ export class AuthProvider {
      });
   }
  
+ //Function for logging the user out
   logout() {
     this.af.auth.logout();
   }
  
+ //Gets the state of the current user.
   get currentUser():string{
     return this.authState?this.authState.auth.email:'';
   } 

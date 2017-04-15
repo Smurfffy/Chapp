@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Locations } from '../../providers/locations';
+import { Locations } from '../../providers/locations'; // Importes the Locations provider to be used in our list page.
  
 @Component({
   selector: 'page-list',
@@ -8,6 +8,7 @@ import { Locations } from '../../providers/locations';
 })
 export class ListPage {
  
+ //Locations class declared in constructor.
   constructor(public navCtrl: NavController, public locations: Locations) {}
  
   ionViewDidLoad() {

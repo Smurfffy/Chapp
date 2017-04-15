@@ -4,6 +4,7 @@
     Review
   </ion-title>
   <ion-buttons end>
+    <!--Button for adding reviews -->
     <button ion-button icon-only (click)="addReview()"><ion-icon name="add"></ion-icon></button>
   </ion-buttons>
  </ion-navbar>
@@ -16,9 +17,10 @@
   </ion-refresher>
  
   <ion-list no-lines>
- 
+ <!--Item can be swiped to reveal delete button -->
+ <!--Loop for displaying reviews -->
     <ion-item-sliding *ngFor="let review of reviews">
- 
+ <!--The review item displaying the title, description and the rating. -->
       <ion-item>
  
  <!--
@@ -34,9 +36,9 @@
         {{review.rating}}
  
       </ion-item>
- 
+ <!--Only option here is our delete option -->
       <ion-item-options>
-        <button ion-button color="danger" (click)="deleteReview(review)">
+        <button ion-button color="danger" (click)="deleteReview(review)"> <!--the delete button for deleting the review from the app and the database-->
           <ion-icon name="trash"></ion-icon>
           Delete
         </button>

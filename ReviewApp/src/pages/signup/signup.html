@@ -5,21 +5,24 @@
 </ion-header>
 <ion-content padding>
   <ion-title>Signup</ion-title>
-   
+   <!--form where entered details are validated and saved to our firebase database. -->
 <form [formGroup]="signupForm" (ngSubmit)="submit()" novalidate>
       <ion-row>
+        <!--Item for enter email adress -->
         <ion-item>
             <ion-label for="email"></ion-label>
             <ion-input type="email" value="" placeholder="Email" formControlName="email"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
+        <!-- Item for entering password-->
         <ion-item>
             <ion-label for="password"></ion-label>
             <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
+        <!--Button for submitting code -->
           <button ion-button type="submit" block>Sign up</button>
       </ion-row>
   </form>

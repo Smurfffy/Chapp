@@ -5,6 +5,7 @@
     <ion-title>
       Nearby
        <ion-row> 
+         <!--Logout button so the user can logout fromm the app -->
       <button (click)="logout()" ion-button block>Log out</button>
   </ion-row>
     </ion-title>
@@ -13,7 +14,7 @@
 </ion-header>
  
 <ion-content>
- 
+ <!--Informs the user to connect to the internet to see the map -->
   <div #pleaseConnect id="please-connect">
     <p>Please connect to the Internet...</p>
   </div>

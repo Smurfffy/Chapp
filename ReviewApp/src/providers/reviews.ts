@@ -11,6 +11,7 @@ export class Reviews {
     this.data = null;
   }
  
+ //Gets the review data
   getReviews(){
  
     if (this.data) {
@@ -18,7 +19,7 @@ export class Reviews {
     }
  
     return new Promise(resolve => {
- 
+      //Here we are connecting to our hosted Node application containing our API so that app can get the data
       this.http.get('https://fathomless-chamber-74986.herokuapp.com/api/reviews')
         .map(res => res.json())
         .subscribe(data => {
@@ -33,7 +34,7 @@ export class Reviews {
  
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
- 
+ //Here we are connecting to our hosted Node application containing our API so that app can post the data
     this.http.post('https://fathomless-chamber-74986.herokuapp.com/api/reviews', JSON.stringify(review), {headers: headers})
       .subscribe(res => {
         console.log(res.json());
@@ -42,7 +43,7 @@ export class Reviews {
   }
  
   deleteReview(id){
- 
+ //Here we are connecting to our hosted Node application containing our API so that app can delete the data
     this.http.delete('https://fathomless-chamber-74986.herokuapp.com/api/reviews/' + id).subscribe((res) => {
       console.log(res.json());
     });    
