@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { ProductPage } from '../pages/product/product';
+ 
 
 /*
   Instead of the home page we import the login page here so when the app starts the user is prompted to log in before the can 

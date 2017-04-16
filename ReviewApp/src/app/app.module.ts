@@ -30,6 +30,7 @@ import { Storage } from '@ionic/storage';
 import { PlacePage } from '../pages/place/place';
 import { AgmCoreModule } from 'angular2-google-maps/core';//angular 2 google maps import
 
+import { ProductPage } from '../pages/product/product';
 
 /*
   Below we configure our app to connect to our firebase server which has the database for user authenticaion.
@@ -59,7 +60,8 @@ export const firebaseConfig = {
     LoginScreen,
     PlaceHomePage,
     NewPlacePage,
-    PlacePage
+    PlacePage,
+     ProductPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -81,7 +83,8 @@ export const firebaseConfig = {
     SignupPage,
     PlaceHomePage,
     NewPlacePage,
-    PlacePage
+    PlacePage,
+     ProductPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity, Reviews, AuthProvider, PlacesService, Storage]
 })
