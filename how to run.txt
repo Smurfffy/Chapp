@@ -1,9 +1,0 @@
-Naviagate to C:\Users\jason\Chapp\server>node server.js
-
-open new cmd
-
-run C:\Program Files\MongoDB>mongo
-
-and new terminal run mongod
-
-the new terminal Ionic serve
