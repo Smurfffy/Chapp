@@ -1,4 +1,4 @@
-###### This project was worked on By Alan Murphy (G00312295), Jason McTigue(G00312233) and Darren Fitzpatrick(G00311853)
+###### This project was worked on By Alan Murphy (G00312295) and Jason McTigue(G00312233)
 
 # Introduction.
 
@@ -18,7 +18,11 @@ As soon as the user is logged in and once they allow the app to have acces to th
 
 3. **The Review Page**
 
-On the review page the user can create reviews, ask questions or just make general comments about the location/event related to it. They must enter a description and a title by tapping the + icon on the top left corner of the app. They can also swipe a review to the left to delete a review. 
+On the review page the user can create reviews, ask questions or just make general comments about the location/event related to it. They must enter a description and a title by tapping the + icon on the top left corner of the app. They can also swipe a review to the left to delete a review.
+
+## Architecture
+
+![alt text](final-year-project-template-master/img/system.png)
 
 ___
 
