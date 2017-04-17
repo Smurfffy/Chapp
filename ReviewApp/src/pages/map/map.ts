@@ -3,8 +3,8 @@ import { Locations } from '../../providers/locations';
 import { GoogleMaps } from '../../providers/google-maps';
 import { NavController, Platform } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth-provider';  //Imports the outentication provider so the logout function can be called
- import { LoginScreen }  from '../loginscreen/loginscreen' // Login page imported so it can be navigated to after log out
- import { App } from 'ionic-angular';
+import { LoginScreen }  from '../loginscreen/loginscreen' // Login page imported so it can be navigated to after log out
+import { App } from 'ionic-angular';
 
 @Component({
   selector: 'page-map',

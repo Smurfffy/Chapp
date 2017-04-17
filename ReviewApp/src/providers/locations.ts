@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+/* -------------
+  Most this code was carried over to the google-maps.ts file, code left uncommented to avoid bugs.
+--------------- */
 
 @Injectable()
 export class Locations {
@@ -9,9 +12,11 @@ export class Locations {
   data: any;
 
   constructor(public http: Http) {
-    console.log('Hello Locations Provider');
+    console.log('Locations Got');
   }
   
+
+  // This loads or saved locations onto the app. Locations are currently hardcoded.
   load(){
     if(this.data){
       return Promise.resolve(this.data);
@@ -33,8 +38,6 @@ export class Locations {
       lng: -74.009056
     };
 
-    
- 
     locations.map((location) => {
  
     let placeLocation = {
@@ -48,9 +51,10 @@ export class Locations {
         'miles'
       ).toFixed(2);
     });
-
     return locations;
   }
+
+  //This isnt used here. Properly explained in Google-Maps.ts. Left uncommented to avoid bugs.
   getDistanceBetweenPoints(start, end, units){
  
         let earthRadius = {
