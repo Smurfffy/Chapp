@@ -21,7 +21,21 @@
             "title": "Town Hall Theatre, Courthouse Square",
             "latitude": 53.2761057477469,
             "longitude": -9.05412896744102
+        },
+
+         {
+            "title": "Pearse Staduim",
+            "latitude": 53.257998968,
+            "longitude": -9.083832998
+        },
+
+        {
+            "title": "The Rosin Dubh",
+            "latitude": 53.27023,
+            "longitude": -9.0582
         }
+
+
         
 
         
