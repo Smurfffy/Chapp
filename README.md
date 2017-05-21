@@ -73,4 +73,8 @@ This will deploy our app on our machine in Ionic Labs where we can view how the 
 
 To use this app on your smart phone device download the .apk file included in this repository and put the file on your phone. Install the .apk on your device and the app will then be installed on your phone. This app is built for Android and IOS.
 
+## Project Video Demonstration
+
+https://youtu.be/A1XcSAGDr8E
+
 
